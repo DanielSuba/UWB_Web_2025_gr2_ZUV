@@ -69,7 +69,7 @@
       "Name": "Wireless Charger",
       "Description": "Fast wireless charging pad for smartphones.",
       "Image": "<svg width='50' height='50'><circle cx='25' cy='25' r='22' fill='#E91E63'/></svg>",
-      "Qty": 58,
+      "Qty": 50,
       "Price": 19.99
     },
     {
@@ -99,6 +99,26 @@
         {
           "id": 10,
           "qty": "10"
+        }
+      ]
+    },
+    {
+      "id": "e9edd00c-5518-460b-83ba-49d4388891f8",
+      "date": "2025-12-15T18:08:22.305Z",
+      "products": [
+        {
+          "id": 9,
+          "qty": "3"
+        }
+      ]
+    },
+    {
+      "id": "27e205e6-a3f4-49f7-956d-c49bfc224005",
+      "date": "2025-12-15T18:08:35.588Z",
+      "products": [
+        {
+          "id": 9,
+          "qty": "5"
         }
       ]
     }
