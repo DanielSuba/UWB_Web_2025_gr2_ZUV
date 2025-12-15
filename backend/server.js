@@ -1,9 +1,20 @@
+<<<<<<< Updated upstream
 const dbAdapter = require('lowdb/node')
 const express = require('express')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const port = 5000
+=======
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
+import crypto from "crypto";
+import { updateRecords, getRecords } from "./db.js";
+
+const app = express();
+const port = 5000;
+>>>>>>> Stashed changes
 
 app.use(bodyParser.json());
 app.use(cors());
