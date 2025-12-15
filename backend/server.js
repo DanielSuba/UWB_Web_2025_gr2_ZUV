@@ -9,7 +9,6 @@ const crypto = require('crypto');
 
 app.use(bodyParser.json());
 app.use(cors());
-
 app.get('/products', async (req, res) => {
     const products = await getRecords('products');
     res.json(products);
