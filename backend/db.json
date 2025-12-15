@@ -5,7 +5,7 @@
       "Name": "Eco Water Bottle",
       "Description": "Reusable stainless steel water bottle, 500ml.",
       "Image": "file:///Users/Roman_Avlasevic/Desktop/uwb-shop-demo/FE/images/image-1.jpg",
-      "Qty": 120,
+      "Qty": 94,
       "Price": 15.99
     },
     {
@@ -13,7 +13,7 @@
       "Name": "Wireless Mouse",
       "Description": "Ergonomic wireless mouse with USB receiver.",
       "Image": "<svg width='50' height='50'><rect width='40' height='30' x='5' y='10' fill='#2196F3'/></svg>",
-      "Qty": 75,
+      "Qty": 49,
       "Price": 22.5
     },
     {
@@ -21,7 +21,7 @@
       "Name": "Bluetooth Speaker",
       "Description": "Portable Bluetooth speaker with 10h battery life.",
       "Image": "<svg width='50' height='50'><ellipse cx='25' cy='25' rx='20' ry='10' fill='#FFC107'/></svg>",
-      "Qty": 60,
+      "Qty": 59,
       "Price": 35
     },
     {
@@ -37,7 +37,7 @@
       "Name": "Desk Lamp",
       "Description": "LED desk lamp with adjustable brightness.",
       "Image": "<svg width='50' height='50'><polygon points='25,5 45,45 5,45' fill='#FF5722'/></svg>",
-      "Qty": 40,
+      "Qty": 35,
       "Price": 28.99
     },
     {
@@ -61,7 +61,7 @@
       "Name": "Fitness Tracker",
       "Description": "Waterproof fitness tracker with heart rate monitor.",
       "Image": "<svg width='50' height='50'><rect width='35' height='15' x='7.5' y='17.5' fill='#00BCD4'/></svg>",
-      "Qty": 55,
+      "Qty": 54,
       "Price": 49.99
     },
     {
@@ -119,6 +119,58 @@
         {
           "id": 9,
           "qty": "5"
+        }
+      ]
+    },
+    {
+      "id": "5254e9a2-cfd4-43df-8b8d-f91e127cd238",
+      "date": "2025-12-15T18:42:35.957Z",
+      "products": [
+        {
+          "id": 1,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "06aaa502-edca-4bd4-a829-fd910ba057a2",
+      "date": "2025-12-15T18:46:14.949Z",
+      "products": [
+        {
+          "id": 2,
+          "qty": 25
+        }
+      ]
+    },
+    {
+      "id": "9da66526-3694-4e18-b43b-a7be8c0441ef",
+      "date": "2025-12-15T18:50:27.822Z",
+      "products": [
+        {
+          "id": 1,
+          "qty": 25
+        },
+        {
+          "id": 3,
+          "qty": 1
+        },
+        {
+          "id": 8,
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "82b93721-0c62-4e0c-b74d-83d8489cfeec",
+      "date": "2025-12-15T18:50:54.869Z",
+      "products": [
+        {
+          "id": 5,
+          "qty": 5
         }
       ]
     }
