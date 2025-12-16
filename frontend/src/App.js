@@ -14,8 +14,8 @@ function App() {
         <main className="page">
           <section className="hero">
             <div>
-              <p className="eyebrow">Minimal Shop</p>
-              <h1>Black & White, Bold & Clean.</h1>
+              <p className="eyebrow">Poligazyn</p>
+              <h1>Buy premium shapes from the 2D world.</h1>
               <p className="lead">Browse products, craft your cart, and review previous orders in one calm canvas.</p>
             </div>
             <div className="hero-badge">
