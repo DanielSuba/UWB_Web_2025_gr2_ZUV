@@ -144,7 +144,7 @@
 }
 
 .card {
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 14px;
   padding: 16px;
   background: rgba(255, 255, 255, 0.03);
@@ -157,7 +157,7 @@
 .product-card .card-body {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .card-media {
@@ -199,7 +199,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
 }
 
 .input-stack {
@@ -207,6 +207,7 @@
   flex-direction: column;
   gap: 4px;
   color: #c9c9c9;
+  width: 100%;
 }
 
 .input-stack input {
