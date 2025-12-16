@@ -13,7 +13,7 @@
       "Name": "Wireless Mouse",
       "Description": "Ergonomic wireless mouse with USB receiver.",
       "Image": "<svg width='50' height='50'><rect width='40' height='30' x='5' y='10' fill='#2196F3'/></svg>",
-      "Qty": 49,
+      "Qty": 46,
       "Price": 22.5
     },
     {
@@ -189,6 +189,16 @@
         {
           "id": 7,
           "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "d85e52e2-3b00-4852-bac1-6805ccd90674",
+      "date": "2025-12-16T15:41:13.274Z",
+      "products": [
+        {
+          "id": 2,
+          "qty": 3
         }
       ]
     }
