@@ -47,9 +47,9 @@ const Product = ({ product }) => {
                         {/* <span className="meta-label">Qty</span> */}
                         <input onChange={changeAddQty} value={addQty} type='number' min={1} />
                     </label>
-                    {/* <button className="ghost-button" onClick={() => saveProductInCart(product)}>
+                    <button className="ghost-button" onClick={() => saveProductInCart(product)}>
                         Add To Cart
-                    </button> */}
+                    </button>
                 </div>
             </div>
         </article>
