@@ -6,7 +6,26 @@ const port = 5000
 const bodyParser = require('body-parser')
 const crypto = require('crypto');
 
+app.get('/products', async (req, res) => {
+    let products = await getRecords('products'); //
+    const { name, price_sort } = req.query; //
 
+    // 1. Filtrowanie po nazwie
+    if (name) {
+        products = products.filter(p => 
+            p.Name.toLowerCase().includes(name.toLowerCase())
+        ); //
+    }
+
+    // 2. Sortowanie po cenie
+    if (price_sort === 'asc') {
+        products.sort((a, b) => Number(a.Price) - Number(b.Price)); //
+    } else if (price_sort === 'desc') {
+        products.sort((a, b) => Number(b.Price) - Number(a.Price)); //
+    }
+
+    res.json(products); //
+});
 app.use(bodyParser.json());
 app.use(cors());
 app.get('/products', async (req, res) => {
