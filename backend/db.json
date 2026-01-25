@@ -37,7 +37,7 @@
       "Name": "Desk Lamp",
       "Description": "LED desk lamp with adjustable brightness.",
       "Image": "<svg width='50' height='50'><polygon points='25,5 45,45 5,45' fill='#FF5722'/></svg>",
-      "Qty": 35,
+      "Qty": 34,
       "Price": 28.99
     },
     {
@@ -199,6 +199,16 @@
         {
           "id": 2,
           "qty": 3
+        }
+      ]
+    },
+    {
+      "id": "fd2119f4-5d6d-47d4-9326-86c93498ccaf",
+      "date": "2026-01-25T20:09:59.322Z",
+      "products": [
+        {
+          "id": 5,
+          "qty": 1
         }
       ]
     }

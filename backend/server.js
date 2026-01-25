@@ -39,9 +39,9 @@ app.get('/products/:id', async (req, res) => {
     res.json(product || { error: 'Not found' });
 });
 
-// GET /orders - Sortowanie po dacie i mapowanie produktów
+// GET /orders - Sortowanie po dacie i Pagynacja
 app.get('/orders', async (req, res) => {
-    const { date_sort } = req.query;
+    const { date_sort, page = 1, limit = 5 } = req.query;
     const orders = await getRecords('orders');
     const products = await getRecords('products');
 
@@ -59,10 +59,19 @@ app.get('/orders', async (req, res) => {
         };
     });
 
+    // Sortowanie
     if (date_sort === 'asc') mappedOrders.sort((a, b) => new Date(a.date) - new Date(b.date));
     else mappedOrders.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    res.json(mappedOrders);
+    // Pagynacja dla zamówień
+    const startIndex = (page - 1) * limit;
+    const paginatedOrders = mappedOrders.slice(startIndex, startIndex + parseInt(limit));
+
+    res.json({
+        data: paginatedOrders,
+        total: mappedOrders.length,
+        pages: Math.ceil(mappedOrders.length / limit)
+    });
 });
 
 // POST /orders - Tworzenie zamówienia + Redukcja Qty
