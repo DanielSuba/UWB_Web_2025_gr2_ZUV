@@ -6,29 +6,48 @@ const ProductsPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   
-  // Stany dla filtrów
+  // Stan dla filtrów i sortowania
   const [search, setSearch] = useState('');
-  const [sort, setSort] = useState(''); // 'asc' lub 'desc'
+  const [sort, setSort] = useState(''); 
+
+  // Stan dla pagynacji
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
     setLoading(true);
-    // Budowanie URL z parametrami zapytania
+    // Budowanie URL z uwzględnieniem pagynacji
     const query = new URLSearchParams({
       name: search,
-      price_sort: sort
+      price_sort: sort,
+      page: page,
+      limit: 8 // stały limit na stronę
     }).toString();
 
     fetch(`http://localhost:5000/products?${query}`)
       .then((response) => response.json())
-      .then((parsedData) => {
-        setProducts(parsedData || []);
+      .then((res) => {
+        // Backend teraz zwraca obiekt { data, total, pages }
+        setProducts(res.data || []);
+        setTotalPages(res.pages || 1);
         setLoading(false);
       })
       .catch(() => {
         setError('Cannot load products right now.');
         setLoading(false);
       });
-  }, [search, sort]); // Reaguj na zmianę wyszukiwania lub sortowania
+  }, [search, sort, page]); // Reaguj na zmianę filtrów lub strony
+
+  // Resetuj stronę do 1, gdy użytkownik zmienia wyszukiwanie lub sortowanie
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+    setPage(1);
+  };
+
+  const handleSortChange = (newSort) => {
+    setSort(sort === newSort ? '' : newSort);
+    setPage(1);
+  };
 
   return (
     <section className="panel" id="products">
@@ -40,13 +59,12 @@ const ProductsPage = () => {
         </div>
       </div>
 
-      {/* Panel filtrów i sortowania */}
       <div className="action-row" style={{ marginBottom: '24px', gap: '12px' }}>
         <input 
           type="text" 
           placeholder="Search by name..." 
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={handleSearchChange}
           className="search-input"
           style={{ 
             flex: 1, 
@@ -60,13 +78,13 @@ const ProductsPage = () => {
         <div style={{ display: 'flex', gap: '8px' }}>
           <button 
             className={`ghost-button ${sort === 'asc' ? 'active' : ''}`} 
-            onClick={() => setSort(sort === 'asc' ? '' : 'asc')}
+            onClick={() => handleSortChange('asc')}
           >
             Price: Low to High
           </button>
           <button 
             className={`ghost-button ${sort === 'desc' ? 'active' : ''}`} 
-            onClick={() => setSort(sort === 'desc' ? '' : 'desc')}
+            onClick={() => handleSortChange('desc')}
           >
             Price: High to Low
           </button>
@@ -82,6 +100,27 @@ const ProductsPage = () => {
         ))}
         {!loading && products.length === 0 && <div className="muted">No products found.</div>}
       </div>
+
+      {/* Panel Pagynacji */}
+      {!loading && totalPages > 1 && (
+        <div className="pagination" style={{ display: 'flex', gap: '15px', marginTop: '30px', justifyContent: 'center', alignItems: 'center' }}>
+            <button 
+                disabled={page === 1} 
+                onClick={() => setPage(p => p - 1)} 
+                className="ghost-button"
+            >
+                Previous
+            </button>
+            <span className="muted">Page {page} of {totalPages}</span>
+            <button 
+                disabled={page === totalPages} 
+                onClick={() => setPage(p => p + 1)} 
+                className="ghost-button"
+            >
+                Next
+            </button>
+        </div>
+      )}
     </section>
   );
 };
